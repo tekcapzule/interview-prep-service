@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.tekcapsule</groupId>
-    <artifactId>course-application</artifactId>
-    <version>1.0.1</version>
+    <artifactId>interview-prep-application</artifactId>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>Interview Prep Application</name>
     <description>Interview Prep Application</description>
