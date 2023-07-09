@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @EqualsAndHashCode(callSuper = true)
-@DynamoDBTable(tableName = "Course")
+@DynamoDBTable(tableName = "InterviewPrep")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
