@@ -7,8 +7,8 @@
     <artifactId>course-application</artifactId>
     <version>1.0.1</version>
     <packaging>pom</packaging>
-    <name>Course Application</name>
-    <description>Course Application</description>
+    <name>Interview Prep Application</name>
+    <description>Interview Prep Application</description>
     <properties>
         <sonar.organization>tekcapsule</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -29,9 +29,9 @@
     </build>
     <distributionManagement>
         <repository>
-            <id>course</id>
+            <id>interview-prep</id>
             <name>GitHub TekCapsule Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/tekcapsule/course-service</url>
+            <url>https://maven.pkg.github.com/tekcapsule/interview-prep-service</url>
         </repository>
     </distributionManagement>
 </project>
