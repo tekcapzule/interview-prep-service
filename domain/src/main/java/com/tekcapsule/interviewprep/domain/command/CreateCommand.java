@@ -2,7 +2,6 @@ package com.tekcapsule.interviewprep.domain.command;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.tekcapsule.core.domain.Command;
-import com.tekcapsule.interviewprep.domain.model.Module;
 import com.tekcapsule.interviewprep.domain.model.*;
 import lombok.Builder;
 import lombok.Data;
@@ -23,8 +22,6 @@ public class CreateCommand extends Command {
     private String description;
     private List<Module> modules;
     private PrizingModel prizingModel;
-    private DeliveryMode deliveryMode;
-    private LearningMode learningMode;
     private String imageUrl;
     private Promotion promotion;
 }

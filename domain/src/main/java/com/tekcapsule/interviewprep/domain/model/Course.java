@@ -36,17 +36,9 @@ public class Course extends BaseDomainEntity implements AggregateRoot {
     private String duration;
     @DynamoDBAttribute(attributeName = "courseUrl")
     private String courseUrl;
-    @DynamoDBAttribute(attributeName = "modules")
-    private List<Module> modules;
     @DynamoDBAttribute(attributeName = "prizingModel")
     @DynamoDBTypeConvertedEnum
     private PrizingModel prizingModel;
-    @DynamoDBAttribute(attributeName = "deliveryMode")
-    @DynamoDBTypeConvertedEnum
-    private DeliveryMode deliveryMode;
-    @DynamoDBAttribute(attributeName = "learningMode")
-    @DynamoDBTypeConvertedEnum
-    private LearningMode learningMode;
     @DynamoDBAttribute(attributeName = "imageUrl")
     private String imageUrl;
     @DynamoDBAttribute(attributeName = "promotion")

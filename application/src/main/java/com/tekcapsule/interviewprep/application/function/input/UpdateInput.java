@@ -2,7 +2,6 @@ package com.tekcapsule.interviewprep.application.function.input;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.tekcapsule.interviewprep.domain.model.*;
-import com.tekcapsule.interviewprep.domain.model.Module;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -23,8 +22,6 @@ public class UpdateInput {
     private String description;
     private List<Module> modules;
     private PrizingModel prizingModel;
-    private DeliveryMode deliveryMode;
-    private LearningMode learningMode;
     private String imageUrl;
     private Promotion promotion;
 }

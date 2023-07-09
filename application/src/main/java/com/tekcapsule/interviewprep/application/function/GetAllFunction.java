@@ -36,7 +36,7 @@ public class GetAllFunction implements Function<Message<EmptyFunctionInput>, Mes
         List<Course> courses = new ArrayList<>();
         String stage = appConfig.getStage().toUpperCase();
         try {
-            log.info("Entering get all courses Function");
+            log.info("Entering get all interview prep courses Function");
             courses = interviewPrepService.findAll();
             responseHeaders = HeaderUtil.populateResponseHeaders(responseHeaders, Stage.valueOf(stage), Outcome.SUCCESS);
         } catch (Exception ex) {

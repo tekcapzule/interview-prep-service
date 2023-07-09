@@ -42,7 +42,7 @@ public class GetFunction implements Function<Message<GetInput>, Message<List<Cou
 
         try {
             GetInput getInput = getInputMessage.getPayload();
-            log.info(String.format("Entering get course Function -Module Code:%s", getInput.getTopicCode()));
+            log.info(String.format("Entering get interview prep course Function -Module Code:%s", getInput.getTopicCode()));
             courses = interviewPrepService.findAllByTopicCode(getInput.getTopicCode());
             if (courses.isEmpty()) {
                 responseHeaders = HeaderUtil.populateResponseHeaders(responseHeaders, Stage.valueOf(stage), Outcome.NOT_FOUND);
