@@ -19,7 +19,6 @@ public class CreateInput {
     private String courseUrl;
     private String summary;
     private String description;
-    private List<Module> modules;
     private PrizingModel prizingModel;
     private String imageUrl;
     private Promotion promotion;

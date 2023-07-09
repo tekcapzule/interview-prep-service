@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.tekcapsule</groupId>
     <artifactId>interview-prep-domain</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>Interview Prep Domain</name>
     <description>Interview Prep Domain</description>
     <properties>
