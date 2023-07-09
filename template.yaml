@@ -20,11 +20,11 @@ Globals:
     CodeUri: ./application
     Tags:
       Stage: !Ref Stage
-      Service: InterviewPrepTable
+      Service: InterviewPrep
       Resource: Lambda
     Environment:
       Variables:
-        TABLE: !Ref InterviewPrep
+        TABLE: !Ref InterviewPrepTable
         APPLICATION_ENVIRONMENT: !Ref Stage
         CLOUD_REGION: us-east-1
         MAIN_CLASS: com.tekcapsule.interviewprep.application.InterviewPrepApplication
