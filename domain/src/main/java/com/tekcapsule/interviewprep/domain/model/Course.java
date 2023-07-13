@@ -6,8 +6,6 @@ import com.tekcapsule.core.domain.AggregateRoot;
 import com.tekcapsule.core.domain.BaseDomainEntity;
 import lombok.*;
 
-import java.util.List;
-
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -34,8 +32,8 @@ public class Course extends BaseDomainEntity implements AggregateRoot {
     private String publisher;
     @DynamoDBAttribute(attributeName = "duration")
     private String duration;
-    @DynamoDBAttribute(attributeName = "courseUrl")
-    private String courseUrl;
+    @DynamoDBAttribute(attributeName = "resourceUrl")
+    private String resourceUrl;
     @DynamoDBAttribute(attributeName = "prizingModel")
     @DynamoDBTypeConvertedEnum
     private PrizingModel prizingModel;

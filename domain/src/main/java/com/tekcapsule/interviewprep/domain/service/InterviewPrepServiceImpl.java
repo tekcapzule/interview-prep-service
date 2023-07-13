@@ -31,7 +31,7 @@ public class InterviewPrepServiceImpl implements InterviewPrepService {
                 .author(createCommand.getAuthor())
                 .publisher(createCommand.getPublisher())
                 .duration(createCommand.getDuration())
-                .courseUrl(createCommand.getCourseUrl())
+                .resourceUrl(createCommand.getResourceUrl())
                 .summary(createCommand.getSummary())
                 .description(createCommand.getDescription())
                 .prizingModel(createCommand.getPrizingModel())
@@ -58,7 +58,7 @@ public class InterviewPrepServiceImpl implements InterviewPrepService {
             course.setAuthor(updateCommand.getAuthor());
             course.setPublisher(updateCommand.getPublisher());
             course.setDuration(updateCommand.getDuration());
-            course.setCourseUrl(updateCommand.getCourseUrl());
+            course.setResourceUrl(updateCommand.getResourceUrl());
             course.setSummary(updateCommand.getSummary());
             course.setDescription(updateCommand.getDescription());
             course.setPrizingModel(updateCommand.getPrizingModel());
