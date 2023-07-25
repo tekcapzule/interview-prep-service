@@ -3,8 +3,10 @@ package com.tekcapsule.interviewprep.application.mapper;
 import com.tekcapsule.core.domain.Command;
 import com.tekcapsule.core.domain.ExecBy;
 import com.tekcapsule.core.domain.Origin;
+import com.tekcapsule.interviewprep.application.function.input.ApproveCourseInput;
 import com.tekcapsule.interviewprep.application.function.input.CreateInput;
 import com.tekcapsule.interviewprep.application.function.input.UpdateInput;
+import com.tekcapsule.interviewprep.domain.command.ApproveCommand;
 import com.tekcapsule.interviewprep.domain.command.CreateCommand;
 import com.tekcapsule.interviewprep.domain.command.UpdateCommand;
 import lombok.extern.slf4j.Slf4j;
@@ -40,6 +42,13 @@ public final class InputOutputMapper {
         BeanUtils.copyProperties(updateInput, updateCommand);
         addOrigin.apply(updateCommand, origin);
         return updateCommand;
+    };
+
+    public static final BiFunction<ApproveCourseInput, Origin, ApproveCommand> buildApproveCommandFromApproveCourseInput = (approveCourseInput, origin) -> {
+        ApproveCommand approveCommand =  ApproveCommand.builder().build();
+        BeanUtils.copyProperties(approveCourseInput, approveCommand);
+        addOrigin.apply(approveCommand, origin);
+        return approveCommand;
     };
 
 }

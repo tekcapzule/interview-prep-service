@@ -166,6 +166,27 @@ Resources:
             RestApiId:
               Ref: InterviewPrepApi
 
+  ApproveInterviewprepCourseFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "${Stage}-Interviewprep-ApproveInterviewprepCourse"
+      SnapStart:
+        ApplyOn: PublishedVersions
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref InterviewPrepTable
+      Environment:
+        Variables:
+          SPRING_CLOUD_FUNCTION_DEFINITION: approveFunction
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: interviewprep/approve
+            Method: post
+            RestApiId:
+              Ref: InterviewPrepApi
+
   # Set Output Variable
 
 Outputs:

@@ -1,5 +1,6 @@
 package com.tekcapsule.interviewprep.domain.service;
 
+import com.tekcapsule.interviewprep.domain.command.ApproveCommand;
 import com.tekcapsule.interviewprep.domain.command.CreateCommand;
 import com.tekcapsule.interviewprep.domain.command.UpdateCommand;
 import com.tekcapsule.interviewprep.domain.model.Course;
@@ -37,7 +38,7 @@ public class InterviewPrepServiceImpl implements InterviewPrepService {
                 .prizingModel(createCommand.getPrizingModel())
                 .imageUrl(createCommand.getImageUrl())
                 .promotion(createCommand.getPromotion())
-                .status(Status.ACTIVE)
+                .status(Status.SUBMITTED)
                 .build();
 
         course.setAddedOn(createCommand.getExecOn());
@@ -84,6 +85,21 @@ public class InterviewPrepServiceImpl implements InterviewPrepService {
         log.info(String.format("Entering findAllByTopicCode interview prep Course service - Module code:%s", topicCode));
 
         return interviewPrepDynamoRepository.findAllByTopicCode(topicCode);
+    }
+
+    @Override
+    public void approve(ApproveCommand approveCommand) {
+        log.info(String.format("Entering approve interview prep course service -  courseId:%s", approveCommand.getCourseId()));
+
+        Course course = interviewPrepDynamoRepository.findBy(approveCommand.getCourseId());
+        if (course != null) {
+            course.setStatus(Status.ACTIVE);
+
+            course.setUpdatedOn(approveCommand.getExecOn());
+            course.setUpdatedBy(approveCommand.getExecBy().getUserId());
+
+            interviewPrepDynamoRepository.save(course);
+        }
     }
 
 
