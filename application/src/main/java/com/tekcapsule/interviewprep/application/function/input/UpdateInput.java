@@ -21,4 +21,5 @@ public class UpdateInput {
     private PrizingModel prizingModel;
     private String imageUrl;
     private Promotion promotion;
+    private int recommendations;
 }

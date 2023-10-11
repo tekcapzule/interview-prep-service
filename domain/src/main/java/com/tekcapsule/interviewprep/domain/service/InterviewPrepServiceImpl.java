@@ -2,6 +2,7 @@ package com.tekcapsule.interviewprep.domain.service;
 
 import com.tekcapsule.interviewprep.domain.command.ApproveCommand;
 import com.tekcapsule.interviewprep.domain.command.CreateCommand;
+import com.tekcapsule.interviewprep.domain.command.RecommendCommand;
 import com.tekcapsule.interviewprep.domain.command.UpdateCommand;
 import com.tekcapsule.interviewprep.domain.model.Course;
 import com.tekcapsule.interviewprep.domain.model.Status;
@@ -39,6 +40,7 @@ public class InterviewPrepServiceImpl implements InterviewPrepService {
                 .imageUrl(createCommand.getImageUrl())
                 .promotion(createCommand.getPromotion())
                 .status(Status.SUBMITTED)
+                .recommendations(createCommand.getRecommendations())
                 .build();
 
         course.setAddedOn(createCommand.getExecOn());
@@ -67,6 +69,24 @@ public class InterviewPrepServiceImpl implements InterviewPrepService {
             course.setImageUrl(updateCommand.getImageUrl());
             course.setUpdatedOn(updateCommand.getExecOn());
             course.setUpdatedBy(updateCommand.getExecBy().getUserId());
+            course.setRecommendations(updateCommand.getRecommendations());
+            interviewPrepDynamoRepository.save(course);
+        }
+    }
+
+    @Override
+    public void recommend(RecommendCommand recommendCommand) {
+        log.info(String.format("Entering recommend InterviewPrep service -  interviewprep code:%s", recommendCommand.getCourseId()));
+
+        Course course = interviewPrepDynamoRepository.findBy(recommendCommand.getCourseId());
+        if (course != null) {
+            Integer recommendationsCount = course.getRecommendations();
+            recommendationsCount += 1;
+            course.setRecommendations(recommendationsCount);
+
+            course.setUpdatedOn(recommendCommand.getExecOn());
+            course.setUpdatedBy(recommendCommand.getExecBy().getUserId());
+
             interviewPrepDynamoRepository.save(course);
         }
     }

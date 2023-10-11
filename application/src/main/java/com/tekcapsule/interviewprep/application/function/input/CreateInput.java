@@ -20,4 +20,5 @@ public class CreateInput {
     private PrizingModel prizingModel;
     private String imageUrl;
     private Promotion promotion;
+    private int recommendations;
 }
