@@ -5,7 +5,7 @@
 
     <groupId>com.tekcapsule</groupId>
     <artifactId>interview-prep-application</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <packaging>pom</packaging>
     <name>Interview Prep Application</name>
     <description>Interview Prep Application</description>
