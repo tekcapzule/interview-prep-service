@@ -24,4 +24,6 @@ public class CreateCommand extends Command {
     private PrizingModel prizingModel;
     private String imageUrl;
     private Promotion promotion;
+    private int recommendations;
+
 }

@@ -187,6 +187,27 @@ Resources:
             RestApiId:
               Ref: InterviewPrepApi
 
+  RecommendNewsDigestFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "${Stage}-Interviewprep-RecommendInterviewprepCourse"
+      SnapStart:
+        ApplyOn: PublishedVersions
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref InterviewPrepTable
+      Environment:
+        Variables:
+          SPRING_CLOUD_FUNCTION_DEFINITION: recommendFunction
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: interviewprep/recommend
+            Method: post
+            RestApiId:
+              Ref: InterviewPrepApi
+
   # Set Output Variable
 
 Outputs:
