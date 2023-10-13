@@ -5,9 +5,11 @@ import com.tekcapsule.core.domain.ExecBy;
 import com.tekcapsule.core.domain.Origin;
 import com.tekcapsule.interviewprep.application.function.input.ApproveCourseInput;
 import com.tekcapsule.interviewprep.application.function.input.CreateInput;
+import com.tekcapsule.interviewprep.application.function.input.RecommendInput;
 import com.tekcapsule.interviewprep.application.function.input.UpdateInput;
 import com.tekcapsule.interviewprep.domain.command.ApproveCommand;
 import com.tekcapsule.interviewprep.domain.command.CreateCommand;
+import com.tekcapsule.interviewprep.domain.command.RecommendCommand;
 import com.tekcapsule.interviewprep.domain.command.UpdateCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -50,5 +52,13 @@ public final class InputOutputMapper {
         addOrigin.apply(approveCommand, origin);
         return approveCommand;
     };
+
+    public static final BiFunction<RecommendInput, Origin, RecommendCommand> buildRecommendCommandFromRecommendInput = (recommendInput, origin) -> {
+        RecommendCommand recommendCommand =  RecommendCommand.builder().build();
+        BeanUtils.copyProperties(recommendInput, recommendCommand);
+        addOrigin.apply(recommendCommand, origin);
+        return recommendCommand;
+    };
+
 
 }
