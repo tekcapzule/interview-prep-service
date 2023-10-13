@@ -187,7 +187,7 @@ Resources:
             RestApiId:
               Ref: InterviewPrepApi
 
-  RecommendNewsDigestFunction:
+  RecommendInterviewprepCourseFunction:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: !Sub "${Stage}-Interviewprep-RecommendInterviewprepCourse"
