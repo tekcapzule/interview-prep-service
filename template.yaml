@@ -27,7 +27,7 @@ Globals:
         TABLE: !Ref InterviewPrepTable
         APPLICATION_ENVIRONMENT: !Ref Stage
         CLOUD_REGION: us-east-1
-        MAIN_CLASS: com.tekcapsule.interviewprep.application.InterviewPrepApplication
+        MAIN_CLASS: com.tekcapzule.interviewprep.application.InterviewPrepApplication
         JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
 
 Resources:
